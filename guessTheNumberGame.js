@@ -24,16 +24,15 @@ while (true) {
     let secret_number = Math.floor(Math.random() * max_num) + 1;
     let tries = 0;
 
-    console.log(`Try to guess the number between 1 and ${max_num}`);
-    
     while (true) {
+        console.log(`Try to guess the number between 1 and ${max_num}`);
         let guess = parseInt(prompt("Enter your guess: "));
         tries += 1;
 
         if (guess < secret_number) {
-            console.log("The secret number is bigger!");
+            console.log(`${guess} The secret number is bigger!`);
         } else if (guess > secret_number) {
-            console.log("The secret number is smaller!");
+            console.log(`${guess} The secret number is smaller!`);
         } else {
             console.log(`🎉 Congratulations! You got it right in ${tries} tries.`);
 
