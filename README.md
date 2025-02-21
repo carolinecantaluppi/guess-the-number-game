@@ -18,9 +18,12 @@ The game provides feedback on whether the guess is too high or too low and keeps
 
 ## How to Play
 
-1. Clone the repository: git clone https://github.com/carolinecantaluppi/guess-the-number-game.git cd guess-the-number-game.git
-2. Open the `index.html` file in a web browser.
-3. Follow the on-screen prompts to guess the randomly generated number.
-4. After each guess, the game will provide feedback.
-5. Continue guessing until you find the correct number.
-6. Upon guessing correctly, the game will display the number of attempts taken.
+1. Clone the repository: git clone https://github.com/carolinecantaluppi/guess-the-number-game.git
+
+2. Follow the on-screen prompts to guess the randomly generated number.
+
+3. After each guess, the game will provide feedback.
+
+4. Continue guessing until you find the correct number.
+
+5. Upon guessing correctly, the game will display the number of attempts taken.
