@@ -5,9 +5,6 @@ while (true) {
     console.log("1 - Easy (1 to 50)");
     console.log("2 - Medium (1 to 100)");
     console.log("3 - Difficult (1 to 200)");
-    let numbers1 = Math.floor(Math.random() * 50) + 1;
-    let numbers2 = Math.floor(Math.random() * 100) + 1;
-    let numbers3 = Math.floor(Math.random() * 200) + 1;
     
     let difficulty = parseInt(prompt("Enter the difficulty number: "));
     
@@ -22,4 +19,8 @@ while (true) {
     }
     
     secret_number = Math.floor(Math.random() * max_num) + 1;
+
+    console.log("Try to guess the number between 1 and " + max_num);
+    
+    let guess = parseInt(prompt("Enter your guess: "))
 }
