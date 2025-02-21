@@ -49,4 +49,10 @@ while (true) {
             break;
         }
     }
+
+    play_again = prompt("Do you want to play again? (yes/no)");
+    if (play_again === "no") {
+        console.log("Thanks for playing!");
+        break;
+    }
 }
