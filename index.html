@@ -10,33 +10,36 @@
 </head>
 <body>
     <div class="container d-flex justify-content-center">
-        <div class="card shadow p-4" style="width: 50rem;">
-            <h1 class="mb-3">Guess The Number</h1>
-            <div class="mb-3 justify-content-center">
-                <label for="difficulty" class="form-label">Choose the difficulty:</label>
-                <select id="difficulty" class="form-select" style="width: 24rem;">
-                    <option value="1">Easy (1-50)</option>
-                    <option value="2">Medium (1-100)</option>
-                    <option value="3">Difficult (1-200)</option>
-                </select>
+        <div class="card start-card rounded-circle shadow p-4">
+            <div class="d-flex flex-column justify-content-center align-items-center h-100">
+                <h1 class="mb-3 text-center">Guess The Number</h1>
+                <div class="mb-3 justify-content-center">
+                    <label for="difficulty" class="form-label">Choose the difficulty:</label>
+                    <select id="difficulty" class="form-select">
+                        <option value="1">Easy (1-50)</option>
+                        <option value="2">Medium (1-100)</option>
+                        <option value="3">Difficult (1-200)</option>
+                    </select>
+                </div>
+                <button class="btn btn-warning w-50" onclick="startGame()">Start</button>
             </div>
-            <button class="btn btn-warning w-50" onclick="startGame()">Start</button>
-            <div id="game" class="mt-4" style="display: none;">
-                <p class="lead">Guess a number between <span id="range"></span></p>
-                <input type="number" id="guess" class="form-control mb-2" placeholder="Enter your guess">
-                <button class="btn btn-success w-100" onclick="checkGuess()">Submit</button>
-                <p id="result" class="text-danger mt-3"></p>
+            <div class="d-flex flex-column justify-content-center align-items-center h-100">
+                <div id="game" class="mt-4">
+                    <p class="lead">Guess a number between <span id="range"></span></p>
+                    <input type="number" id="guess" class="form-control mb-2" placeholder="Enter your guess">
+                    <button class="btn btn-success w-100" onclick="checkGuess()">Submit</button>
+                    <p id="result" class="text-danger mt-3"></p>
+                </div>
             </div>
-        </div>
-        <!-- <div class="d-flex justify-content-center"> -->
-            <div id="win-card" class="card text-center mb-3 shadow p-4 d-none" style="width: 28rem;">
+        <div class="d-flex justify-content-center">
+            <div id="win-card" class="card win-card text-center mb-3 shadow p-4 d-none">
                 <div class="card-body">
                     <h5 class="card-title">YOU WIN!!!</h5>
                     <p>Congratulations! You guessed it in <span id="tries"></span> tries.</p>
                     <a href="#" class="btn btn-success" onclick="startGame()">Play again</a>
                 </div>
             </div>
-        <!-- </div> -->
+        </div>
     </div>
 </body>
 </html>

@@ -2,16 +2,34 @@ body {
     font-family: Arial, 
     sans-serif; 
     text-align: center; 
-    background-color: #f8f9fa; 
+    /* background-color: #1E3A8A; */
+    color: #E5E7EB;
 }
 
 .container { 
     max-width: 400px; 
     margin-top: 50px; 
 }
- 
+
+/* Cards */
 .card { 
     border-radius: 15px; 
+    background-color: #FFFFFF;
+    /* color: #1E3A8A; */
+}
+
+.start-card {
+    width: 400px; 
+    height: 400px;
+}
+
+.guess-card {
+    display: none;
+}
+
+.win-card {
+    width: 500px; 
+    height: 500px;
 }
 
 #result { 
@@ -21,4 +39,8 @@ body {
 
 .d-none {
     display: none;
+}
+
+.form-select {
+    width: 12rem;
 }

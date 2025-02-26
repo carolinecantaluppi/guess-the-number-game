@@ -5,7 +5,12 @@ let tries = 0;
 
 // Function to start the game based on selected difficulty
 function startGame() {   
-    let difficulty = parseInt(document.getElementById("difficulty").value); 
+    let difficultyElement = document.getElementById("difficulty");
+    let startButton = document.querySelector("button[onclick='startGame()']");
+    let gameContainer = document.getElementById("game");
+    let difficultyContainer = document.getElementById("difficulty").parentElement;
+
+    let difficulty = parseInt(difficultyElement.value); 
 
     if (difficulty === 1) {
         max_num = 50;
@@ -24,9 +29,14 @@ function startGame() {
     
     // Update UI elements to reflect the new game state
     document.getElementById("range").innerText = `1 and ${max_num}`;
-    document.getElementById("game").style.display = "block";
+    gameContainer.style.display = "block";
     document.getElementById("result").innerText = "";
     document.getElementById("guess").value = "";
+    document.getElementById("win-card").classList.add("d-none");
+    
+    // Hide difficulty selection and start button
+    startButton.style.display = "none";
+    difficultyContainer.style.display = "none";
     
     console.log(`Secret number (for testing): ${secret_number}`);
 }
@@ -48,9 +58,12 @@ function checkGuess() {
     } else if (guess > secret_number) {
         resultText = `${guess} - The secret number is smaller!`;
     } else {
+        // Correct guess, show success message and hide game
         resultText = `Congratulations! You guessed it in ${tries} tries.`;
         document.getElementById("game").style.display = "none";
-        
+        document.getElementById("win-card").classList.remove("d-none");
+        document.getElementById("background").style.display = "none";
+        document.getElementById("tries").innerText = tries;
         if (best_tries === null || tries < best_tries) {
             best_tries = tries;
             resultText = "New record! " + resultText;
